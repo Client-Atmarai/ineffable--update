@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+   <!-- <link rel="stylesheet" href="/static/css/style.css">-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   
+</head>
+<style>
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color:black;
+        }
+
+        .container {
+            border: 1px solid white;
+            box-shadow:2px 2px 3px 4px white;
+    width: 80%;
+    max-width: 320px;
+    height: 430px;
+    margin: 10% auto;
+    border-radius: 4%;
+    background-color: black;
+    padding: 20px;        }
+
+        .Logintext {
+            font-size: 40px;
+            text-align: center;
+            font-weight: bold;
+            font-family: math;
+            margin-top: 4%;
+            color: white;
+        }
+
+        .Logintext p {}
+
+        .inputfields {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 10px; /* Adjusted margin-top */
+        }
+
+        .input {
+            border: 1px solid black;
+            padding: 10px;
+            border-radius: 20px;
+            margin: 10px;
+            font-size: 14px; /* Updated font size */
+            font-family: cursive;
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            margin-top: 20px; /* Adjusted margin-top */
+        }
+
+        .BtnLogin,
+        .BtnSignup {
+            border: 1px solid black;
+            padding: 10px 20px; /* Adjusted padding */
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 12px;
+            color: white;
+        }
+
+        .BtnLogin {
+            background: blue;
+        }
+
+        .BtnSignup {
+            background-color: darkgreen;
+        }
+
+        .txtsignup {
+            width: 100%; /* Updated width */
+            text-align: center; /* Center the text */
+            margin-top: 20px; /* Adjusted margin-top */
+            font-size: 14px;
+            font-family: sans-serif;
+            color: white;
+        }
+
+        .btnsignuplink {
+            text-decoration: none;
+            color: white;
+        }
+
+        .txtaccount {}
+
+        .txtlinksignup {
+            text-decoration: none;
+            color: darkblue;
+        }
+
+        .forgotpasswordtxt {
+            width: 100%; /* Updated width */
+            text-align: center; /* Center the text */
+            margin-top: 10px; /* Adjusted margin-top */
+            font-size: 14px;
+            font-family: sans-serif;
+            color: white;
+        }
+
+        .forgot {}
+
+        .forgotpasswordlink {
+            text-decoration: none;
+            color: darkblue;
+        }
+
+        /* Media Query for Responsive Design */
+        @media (max-width: 400px) {
+            .container {
+                width: 90%; /* Adjusted width */
+                margin-top: 20%; /* Adjusted margin-top */
+            }
+        }
+        </style>
+<body>
+    <div class="container" style="background-color:white;border-radius:20px;box-shadow:3px 5px   white;">
+        <div class="Logintext" style="color:black;">
+            <p>Login</p>
+        </div>
+        <form action="{% url 'centrelogin' %}"  class="inputfields" method="POST">
+             {% csrf_token %} 
+            <input class="input" type="text" name="username" id="" placeholder="Center code" required>
+            <input class="input" type="password" name="password" id="" placeholder="password">
+        
+        <div class="buttons">
+            <button class="BtnLogin" type="submit" style="background-color:black;color:white;">LogIn</button>
+            {% comment %} <button class="BtnSignup"><a class="btnsignuplink" href="">SignUp</a></button> {% endcomment %}
+        </div>
+    </form>
+        {% comment %} <div class="txtsignup">
+            <p class="txtaccount">Create an account <a class="txtlinksignup" href="">Signup now</a></p>
+        </div> {% endcomment %}
+
+        {% comment %} <div class="forgotpasswordtxt">
+            <p class="forgot">Forgot <a class="forgotpasswordlink" href="">Password?</a></p>
+        </div> {% endcomment %}
+    </div>
+
+</body>
+
+</html>
